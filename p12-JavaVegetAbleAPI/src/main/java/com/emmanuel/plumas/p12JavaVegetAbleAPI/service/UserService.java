@@ -15,9 +15,27 @@ public class UserService {
 	private IUserRepository userRepository;
 	
 	public List<UserEntity> getAllUsers(){
-		
 		List<UserEntity> userEntities=(List<UserEntity>) userRepository.findAll();
 		return userEntities;
 	}
+	
+	public UserEntity getUserEntityByUserIdentifiant(String userIdentifiant) {
+		UserEntity userEntity=userRepository.findByUserIdentifiant(userIdentifiant);
+		return userEntity;
+	}
+
+	public UserEntity getUserById(Long id) {
+		UserEntity userEntity=userRepository.findByUserId(id);
+		return userEntity;
+	}
+	
+	public UserEntity updateUser(UserEntity userEntity) {
+		userRepository.save(userEntity);
+		return userEntity;
+	}
+	
+	public void saveUserEntity(UserEntity userEntity) {
+		userRepository.save(userEntity);
+		}
 	
 }

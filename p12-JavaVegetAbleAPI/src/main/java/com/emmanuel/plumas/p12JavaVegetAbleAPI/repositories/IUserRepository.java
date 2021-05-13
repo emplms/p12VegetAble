@@ -10,5 +10,8 @@ import com.emmanuel.plumas.p12JavaVegetAbleAPI.model.UserEntity;
 @Repository
 @Qualifier("IUserRepository")
 public interface IUserRepository extends CrudRepository<UserEntity,Long>{
+	
+	UserEntity findByUserIdentifiant(String userIdentifiant);
 
+	UserEntity findByUserId(Long id);
 }
