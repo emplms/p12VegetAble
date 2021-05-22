@@ -33,14 +33,21 @@ public class UserController {
 		return "userformpage";
 	}
 	
-	//TODO Gestion de la création réussie ou non
+	//Gestion de la création réussie ou non
 	//SI création réussie : aller sur une page de confirmation de création avec les données créées
 	// Création de session??
 	//SINON Message et rester sur la page de création de compte
 	@PostMapping(value="/user/createUser")
-	public String createUserEntity(@ModelAttribute("userForm") UserEntity userEntity) {
-		userService.createUserEntity(userEntity);
-		return "userformpage";
+	public String createUserEntity(Model model,@ModelAttribute("userForm") UserEntity userEntity) {
+		boolean userCreated=false;
+		userCreated=userService.createUserEntity(userEntity);
+		if(userCreated) {
+			model.addAttribute("userEntity", userEntity);
+			return "confirmUserCreation";
+		}else {
+			String noUserCreationMessage="L'identifiant existe déjà et/ou est vide. Veuillez recommencer l'inscription";
+			model.addAttribute("noUserCreationMessage",noUserCreationMessage);
+			return "noUserCreation";
+		}
 	}
-	
 }

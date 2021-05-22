@@ -27,12 +27,45 @@ public class UserService {
 		return userEntity;
 	}
 	
-	//TODO Ajouter le traitement des créations incorrectes ou impossibles
-	// Identifiant déjà existant
-	// Identifiant vide
-	public void createUserEntity(UserEntity userEntity) {
+	
+	public boolean createUserEntity(UserEntity userEntity) {
 		//Cryptage du mot de passe qui sera sauvegardé en base
 		userEntity.setUserPassword(BCrypt.hashpw(userEntity.getUserPassword(),BCrypt.gensalt()));
-		apiProxy.setUserEntity(userEntity);
+		Boolean userCreated=false;
+		if(checkRegistration(userEntity)) {
+			apiProxy.setUserEntity(userEntity);
+			userCreated=true;
+		}
+		return userCreated;
+	}
+	
+	//Verification des conditions de création de compte
+	private boolean checkRegistration(UserEntity userEntity) {
+		Boolean registrationIsChecked=false;
+		if(checkIdentifiantNotExist(userEntity) && checkIdentifiantIsNotEmpty(userEntity)) {
+			registrationIsChecked=true;
+		}
+		return registrationIsChecked;
+	}
+	
+	//Identifiant déjà existant
+	private boolean checkIdentifiantNotExist(UserEntity userEntity) {
+		Boolean identifiantNotExist=true;
+		List<UserEntity> userEntities=apiProxy.getAllUsers();
+		for(UserEntity userEntityInBase :userEntities) {
+			if(userEntityInBase.getUserIdentifiant().equals(userEntity.getUserIdentifiant())) {
+				identifiantNotExist=false;
+			}
+		}
+		return identifiantNotExist;
+	}
+	
+	//Identifiant vide
+	private boolean checkIdentifiantIsNotEmpty(UserEntity userEntity) {
+		Boolean identifiantIsNotEmpty=false;
+		if(!userEntity.getUserIdentifiant().isEmpty()) {
+			identifiantIsNotEmpty=true;
+		}
+		return identifiantIsNotEmpty;
 	}
 }
