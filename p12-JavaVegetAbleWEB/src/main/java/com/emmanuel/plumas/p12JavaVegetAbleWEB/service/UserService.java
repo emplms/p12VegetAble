@@ -29,10 +29,10 @@ public class UserService {
 	
 	
 	public boolean createUserEntity(UserEntity userEntity) {
-		//Cryptage du mot de passe qui sera sauvegardé en base
-		userEntity.setUserPassword(BCrypt.hashpw(userEntity.getUserPassword(),BCrypt.gensalt()));
 		Boolean userCreated=false;
 		if(checkRegistration(userEntity)) {
+			//Cryptage du mot de passe qui sera sauvegardé en base
+			userEntity.setUserPassword(BCrypt.hashpw(userEntity.getUserPassword(),BCrypt.gensalt()));
 			apiProxy.setUserEntity(userEntity);
 			userCreated=true;
 		}
@@ -42,7 +42,7 @@ public class UserService {
 	//Verification des conditions de création de compte
 	private boolean checkRegistration(UserEntity userEntity) {
 		Boolean registrationIsChecked=false;
-		if(checkIdentifiantNotExist(userEntity) && checkIdentifiantIsNotEmpty(userEntity)) {
+		if(checkIdentifiantNotExist(userEntity) && checkIdentifiantIsNotEmpty(userEntity) && checkPasswordIsNotEmpty(userEntity)) {
 			registrationIsChecked=true;
 		}
 		return registrationIsChecked;
@@ -67,5 +67,14 @@ public class UserService {
 			identifiantIsNotEmpty=true;
 		}
 		return identifiantIsNotEmpty;
+	}
+	
+	//Mot de passe vide
+	private boolean checkPasswordIsNotEmpty(UserEntity userEntity) {
+		Boolean passwordIsNotEmpty=false;
+		if(!userEntity.getUserPassword().isEmpty()) {
+			passwordIsNotEmpty=true;
+		}
+		return passwordIsNotEmpty;
 	}
 }

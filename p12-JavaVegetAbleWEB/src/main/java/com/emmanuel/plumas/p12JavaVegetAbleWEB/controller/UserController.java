@@ -45,7 +45,7 @@ public class UserController {
 			model.addAttribute("userEntity", userEntity);
 			return "confirmUserCreation";
 		}else {
-			String noUserCreationMessage="L'identifiant existe déjà et/ou est vide. Veuillez recommencer l'inscription";
+			String noUserCreationMessage="L'identifiant et/ou le mot de passe sont vides ou déjà utilisés. Veuillez recommencer l'inscription en cliquant sur le lien suivnat : ";
 			model.addAttribute("noUserCreationMessage",noUserCreationMessage);
 			return "noUserCreation";
 		}
