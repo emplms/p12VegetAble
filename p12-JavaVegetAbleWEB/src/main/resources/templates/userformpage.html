@@ -38,6 +38,22 @@
 										<label for="Mot de passe">Mot de passe</label>
 										<input type="text" th:field="*{userPassword}" placeholder="Mot de passe"/>
 									</div>
+									<div>
+										<label for="Mot de passe">Email</label>
+										<input type="text" th:field="*{adressEntity.adressEmail}" placeholder="Email"/>
+									</div>
+									<div>
+										<label for="Mot de passe">NUméro de téléphone</label>
+										<input type="text" th:field="*{adressEntity.adressPhoneNumber}" placeholder="Numéro de téléphone"/>
+									</div>
+									<div>
+										<label for="Mot de passe">Ville</label>
+										<input type="text" th:field="*{adressEntity.adressTown}" placeholder="Ville"/>
+									</div>
+									<div>
+										<label for="Mot de passe">Code Postal</label>
+										<input type="text" th:field="*{adressEntity.adressZipCode}" placeholder="Code Postal"/>
+									</div>
 				       			<input type="submit" value="M'inscrire"/>				
 							</form>
 									

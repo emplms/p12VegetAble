@@ -34,8 +34,7 @@ public class UserController {
 	}
 	
 	//Gestion de la création réussie ou non
-	//SI création réussie : aller sur une page de confirmation de création avec les données créées
-	// Création de session??
+	//SI création réussie : aller sur la page de connection
 	//SINON Message et rester sur la page de création de compte
 	@PostMapping(value="/user/createUser")
 	public String createUserEntity(Model model,@ModelAttribute("userForm") UserEntity userEntity) {
@@ -43,11 +42,12 @@ public class UserController {
 		userCreated=userService.createUserEntity(userEntity);
 		if(userCreated) {
 			model.addAttribute("userEntity", userEntity);
-			return "confirmUserCreation";
+			return "redirect:/login";
 		}else {
 			String noUserCreationMessage="L'identifiant et/ou le mot de passe sont vides ou déjà utilisés. Veuillez recommencer l'inscription en cliquant sur le lien suivnat : ";
 			model.addAttribute("noUserCreationMessage",noUserCreationMessage);
 			return "noUserCreation";
 		}
 	}
+
 }

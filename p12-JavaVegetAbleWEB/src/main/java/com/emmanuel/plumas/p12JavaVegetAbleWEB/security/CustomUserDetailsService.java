@@ -25,7 +25,7 @@ public class CustomUserDetailsService implements UserDetailsService{
 	private UserService userService;
 	
 	public UserDetails loadUserByUsername(String userIdentifiant) throws UsernameNotFoundException{
-		//TODO Me connecter à partir de l'identifiant
+		//TODO Afficher identifiant dans le placeholder du formulaire
 		UserEntity userEntity=userService.getUserEntityByUserIdentifiant(userIdentifiant);
 		return new org.springframework.security.core.userdetails.User(userEntity.getUserIdentifiant(), userEntity.getUserPassword(), getGrantedAuthorities());
 	}

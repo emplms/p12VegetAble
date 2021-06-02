@@ -3,6 +3,7 @@ package com.emmanuel.plumas.p12JavaVegetAbleAPI.model;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -15,6 +16,7 @@ public class AdressEntity implements Serializable{
 
 	
 	@Id
+	@GeneratedValue
 	private Long adressId;
 	private String adressTown;
 	private int adressZipCode;
