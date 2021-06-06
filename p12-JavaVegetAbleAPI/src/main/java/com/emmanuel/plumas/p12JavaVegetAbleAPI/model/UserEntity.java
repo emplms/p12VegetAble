@@ -2,12 +2,13 @@ package com.emmanuel.plumas.p12JavaVegetAbleAPI.model;
 
 import java.io.Serializable;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-
 
 @Entity
 @Table(name="vegetableuser")
@@ -23,7 +24,8 @@ public class UserEntity implements Serializable{
 	private String userLastName;
 	private String userFirstName;
 	
-	@ManyToOne
+	@ManyToOne(cascade = CascadeType.PERSIST)
+	@JoinColumn(name="adress_id")
 	private AdressEntity adressEntity;
 
 	public UserEntity(Long userId, String userIdentifiant, String userPassword, String userLastName,
@@ -88,15 +90,6 @@ public class UserEntity implements Serializable{
 	public void setAdressEntity(AdressEntity adressEntity) {
 		this.adressEntity = adressEntity;
 	}
-
-	@Override
-	public String toString() {
-		return "UserEntity [userId=" + userId + ", userIdentifiant=" + userIdentifiant + ", userPassword="
-				+ userPassword + ", userLastName=" + userLastName + ", userFirstName=" + userFirstName
-				+ ", adressEntity=" + adressEntity + "]";
-	}	
-	
-	
 	
 	
 }

@@ -35,7 +35,7 @@ import com.emmanuel.plumas.p12JavaVegetAbleWEB.security.CustomUserDetailsService
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 			
-			 http.authorizeRequests().antMatchers("/","/user/createUser").permitAll();
+			 http.authorizeRequests().antMatchers("/","/user/createUser","/provisions").permitAll();
 			 
 			
 			// Authentication needed for the other request

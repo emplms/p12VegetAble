@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.ProvisionEntity;
 import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.UserEntity;
 
 @FeignClient(name="p12JavaVegetable-API", url="localhost:9001")
@@ -23,5 +24,8 @@ public interface ApiProxy {
 	
 	@PostMapping(value="/user/createUserEntity")
 	public void setUserEntity(@RequestBody UserEntity userEntity);
+
+	@GetMapping(value="/provisions")
+	public List<ProvisionEntity> getAllProvisions();
 	
 }
