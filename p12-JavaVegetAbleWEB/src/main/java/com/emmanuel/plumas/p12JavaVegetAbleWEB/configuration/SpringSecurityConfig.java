@@ -41,7 +41,7 @@ import com.emmanuel.plumas.p12JavaVegetAbleWEB.security.CustomUserDetailsService
 			// Authentication needed for the other request
 			http
 				.authorizeRequests()
-					.antMatchers("/users").authenticated()
+					.antMatchers("/users","/provisionbyuseridentifiant", "/provisionsByUserIdentifiant").authenticated()
 				.and()
 					.formLogin();
 		}

@@ -28,4 +28,6 @@ public interface ApiProxy {
 	@GetMapping(value="/provisions")
 	public List<ProvisionEntity> getAllProvisions();
 	
+	@GetMapping(value="/provision/{userIdentifiant}")
+	public List<ProvisionEntity> getProvisionsByUserIdentifiant(@PathVariable String userIdentifiant);
 }

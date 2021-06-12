@@ -20,4 +20,7 @@ public class ProvisionService {
 		return provisionEntities;
 	}
 
+	public List<ProvisionEntity> getProvisionsByUserIdentifiant(String userIdentifiant){
+		return apiProxy.getProvisionsByUserIdentifiant(userIdentifiant);
+	}
 }
