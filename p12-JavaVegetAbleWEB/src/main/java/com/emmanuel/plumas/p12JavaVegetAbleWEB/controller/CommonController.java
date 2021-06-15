@@ -5,7 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 public abstract class CommonController {
 
-	protected String getPrincipal() {
+	protected String getUserNamePrincipal() {
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		String userLastName = "empty";
 		if (principal instanceof UserDetails) {

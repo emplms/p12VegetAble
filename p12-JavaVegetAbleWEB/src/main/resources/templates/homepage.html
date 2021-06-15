@@ -46,7 +46,7 @@
 					<div class="card">
 						<div class="card-header text-info">Votre profil utilisateur</div>
 							<div class="card-body">
-								<p th:text="${principal == 'anonymousUser'} ? 'Vous êtes déconnecté' : 'Vous êtes connecté en tant que '+ ${principal}"></p>
+								<p th:text="${principal == 'anonymousUser'} ? 'Vous êtes déconnectés' : 'Vous êtes connectés en tant que '+ ${principal}"></p>
 								<ul th:if="${principal=='anonymousUser'}" class="list-group">
 									<li class="list-group-item"><a  th:href="@{http://localhost:8080/login}">Me Connecter</a></li>
 									<li class="list-group-item"><a  th:href="@{http://localhost:8080/user/createUser}">Me créer un nouveau compte</a></li>

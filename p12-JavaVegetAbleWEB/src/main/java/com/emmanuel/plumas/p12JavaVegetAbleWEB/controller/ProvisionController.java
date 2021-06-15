@@ -24,7 +24,7 @@ public class ProvisionController extends CommonController{
 	
 	@GetMapping(value="/provisionsByUserIdentifiant")
 	public String getProvisionsByUserIdentifiant(Model model) {
-		List<ProvisionEntity> provisionEntities=provisionService.getProvisionsByUserIdentifiant(getPrincipal());
+		List<ProvisionEntity> provisionEntities=provisionService.getProvisionsByUserIdentifiant(getUserNamePrincipal());
 		model.addAttribute("provisionEntities",provisionEntities);
 		return "provisionsbyuseridentifiant";
 	}

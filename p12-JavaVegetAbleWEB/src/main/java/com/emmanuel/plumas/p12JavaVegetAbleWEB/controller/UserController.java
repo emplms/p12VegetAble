@@ -41,7 +41,7 @@ public class UserController {
 		boolean userCreated=false;
 		userCreated=userService.createUserEntity(userEntity);
 		if(userCreated) {
-			model.addAttribute("userEntity", userEntity);
+			//model.addAttribute("userEntity", userEntity);
 			return "redirect:/login";
 		}else {
 			String noUserCreationMessage="L'identifiant et/ou le mot de passe sont vides ou déjà utilisés. Veuillez recommencer l'inscription en cliquant sur le lien suivnat : ";

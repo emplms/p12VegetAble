@@ -35,8 +35,10 @@ import com.emmanuel.plumas.p12JavaVegetAbleWEB.security.CustomUserDetailsService
 		@Override
 		protected void configure(HttpSecurity http) throws Exception {
 			
-			 http.authorizeRequests().antMatchers("/","/user/createUser","/provisions").permitAll();
-			 
+			http.authorizeRequests().antMatchers("/","/user/createUser","/provisions").permitAll();
+			
+			//Redirection vers la page d'accueil après le logout
+			http.logout().logoutSuccessUrl("/");
 			
 			// Authentication needed for the other request
 			http
@@ -44,6 +46,7 @@ import com.emmanuel.plumas.p12JavaVegetAbleWEB.security.CustomUserDetailsService
 					.antMatchers("/users","/provisionbyuseridentifiant", "/provisionsByUserIdentifiant").authenticated()
 				.and()
 					.formLogin();
+
 		}
 	}
 

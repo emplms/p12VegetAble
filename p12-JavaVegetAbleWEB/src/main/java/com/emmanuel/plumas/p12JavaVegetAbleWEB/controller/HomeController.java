@@ -9,7 +9,7 @@ public class HomeController extends CommonController{
 	
 	@GetMapping(value="/")
 	public String homePage(Model model) {
-		String userIdentifiant=getPrincipal();
+		String userIdentifiant=getUserNamePrincipal();
 		model.addAttribute("principal", userIdentifiant);
 		return "homepage";
 	}
