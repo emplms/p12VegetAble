@@ -2,11 +2,14 @@ package com.emmanuel.plumas.p12JavaVegetAbleWEB.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class ProvisionEntity {
 
 	private Long provisionId;
 	private String provisionName;
 	private String provisionDescription;
+	@DateTimeFormat (pattern="dd-MM-yyyy")
 	private Date provisionAvailibilityDate;
 	private String provisionStatus;
 	private UserEntity userEntity;
@@ -15,8 +18,6 @@ public class ProvisionEntity {
 	public ProvisionEntity() {
 		super();
 	}
-
-
 
 	public ProvisionEntity(Long provisionId, String provisionName, String provisionDescription,
 			Date provisionAvailibilityDate, String provisionStatus, UserEntity userEntity,
@@ -31,21 +32,13 @@ public class ProvisionEntity {
 		this.provisionCategoryEntity = provisionCategoryEntity;
 	}
 
-
-
-
-
 	public ProvisionCategoryEntity getProvisionCategoryEntity() {
 		return provisionCategoryEntity;
 	}
 
-
-
 	public void setProvisionCategoryEntity(ProvisionCategoryEntity provisionCategoryEntity) {
 		this.provisionCategoryEntity = provisionCategoryEntity;
 	}
-
-
 
 	public Long getProvisionId() {
 		return provisionId;

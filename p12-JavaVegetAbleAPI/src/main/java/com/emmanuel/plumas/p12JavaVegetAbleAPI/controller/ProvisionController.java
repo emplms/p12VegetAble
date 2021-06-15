@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emmanuel.plumas.p12JavaVegetAbleAPI.model.ProvisionEntity;
@@ -24,5 +26,10 @@ public class ProvisionController {
 	@GetMapping(value="/provision/{userIdentifiant}")
 	public List<ProvisionEntity> getProvisionsByUserIdentifiant(@PathVariable String userIdentifiant){
 		return provisionService.getProvisionsByUserIdentifiant(userIdentifiant);
+	}
+	
+	@PostMapping(value="provision/createProvision")
+	public void createProvision(@RequestBody ProvisionEntity provisionEntity) {
+		provisionService.createProvisionEntity(provisionEntity);
 	}
 }

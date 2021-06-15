@@ -30,4 +30,7 @@ public interface ApiProxy {
 	
 	@GetMapping(value="/provision/{userIdentifiant}")
 	public List<ProvisionEntity> getProvisionsByUserIdentifiant(@PathVariable String userIdentifiant);
+	
+	@PostMapping(value="provision/createProvision")
+	public void createProvision(@RequestBody ProvisionEntity provisionEntity);
 }

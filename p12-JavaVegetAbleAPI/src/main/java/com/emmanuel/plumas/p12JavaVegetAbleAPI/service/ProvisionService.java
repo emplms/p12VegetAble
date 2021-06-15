@@ -29,4 +29,8 @@ public class ProvisionService {
 		return provisionEntities;
 	}
 	
+	public void createProvisionEntity(ProvisionEntity provisionEntity) {
+		provisionRepository.save(provisionEntity);
+	}
+	
 }

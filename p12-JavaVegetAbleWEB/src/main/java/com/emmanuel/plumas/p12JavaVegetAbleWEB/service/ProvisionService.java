@@ -23,4 +23,9 @@ public class ProvisionService {
 	public List<ProvisionEntity> getProvisionsByUserIdentifiant(String userIdentifiant){
 		return apiProxy.getProvisionsByUserIdentifiant(userIdentifiant);
 	}
+
+	public void createProvisionEntity(ProvisionEntity provisionEntity) {
+		apiProxy.createProvision(provisionEntity);
+		
+	}
 }
