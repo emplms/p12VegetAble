@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.ProvisionCategoryEntity;
 import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.ProvisionEntity;
 import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.UserEntity;
 
@@ -33,4 +34,7 @@ public interface ApiProxy {
 	
 	@PostMapping(value="provision/createProvision")
 	public void createProvision(@RequestBody ProvisionEntity provisionEntity);
+	
+	@GetMapping(value="/provisionCategories")
+	public List<ProvisionCategoryEntity> getAllProvisionCategories();
 }

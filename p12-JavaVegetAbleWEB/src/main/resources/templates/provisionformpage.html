@@ -32,8 +32,13 @@
 									</div>
 									<div>
 										<label for="Date de disponibilité">Date de disponibilité</label>
-										<!-- <input type="datetime" th:field="*{provisionAvailibilityDate}" placeholder="jj/mm/aaaa"/>   -->
 								     	<input type= "datetime" th:field="*{provisionAvailibilityDate}" placeholder="jj-mm-aaaa"/>
+									</div>
+									<div>
+										<label for="Catégorie">Catégorie</label>
+								     	<select th:field="*{provisionCategoryEntity.provisionCategoryId}">
+    										<option th:each="category : ${categories}" th:value="${category.provisionCategoryId}" th:text="${category.provisionCategoryName}"></option>
+										</select>
 									</div>
 				       			<input type="submit" value="Créer le don"/>				
 							</form>

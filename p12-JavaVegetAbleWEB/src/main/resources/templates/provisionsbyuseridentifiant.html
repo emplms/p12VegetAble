@@ -53,6 +53,7 @@
 					     		<tr class="table-info text-info">
 					       			<th>Nom</th>
 					       			<th>Description</th>
+					       			<th>Catégorie</th>
 					       			<th>Date de disponibilité</th>
 					       			<th>Statut du don</th>
 				        			<th>Nom du Veget'able user</th>
@@ -62,6 +63,7 @@
 							    <tr th:each="provision:${provisionEntities}">
 							    	<td th:text="${provision.provisionName}"></td>
 							        <td th:text="${provision.provisionDescription}"></td>
+							        <td th:text="${provision.provisionCategoryEntity.provisionCategoryName}"></td>
 							        <td th:text="${#dates.format(provision.provisionAvailibilityDate,'dd-MM-yyyy')}"></td>
 							        <td th:text="${provision.provisionStatus}"></td>
 							        <td th:text="${provision.userEntity.userFirstName}"></td>

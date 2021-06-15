@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.ProvisionCategoryEntity;
 import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.ProvisionEntity;
+import com.emmanuel.plumas.p12JavaVegetAbleWEB.service.ProvisionCategoryService;
 import com.emmanuel.plumas.p12JavaVegetAbleWEB.service.ProvisionService;
 import com.emmanuel.plumas.p12JavaVegetAbleWEB.service.UserService;
 
@@ -21,6 +23,9 @@ public class ProvisionController extends CommonController{
 	
 	@Autowired 
 	private UserService userService;
+	
+	@Autowired
+	private ProvisionCategoryService provisionCategoryService;
 	
 	@GetMapping(value="/provisions")
 	public String getProvisionsEntities(Model model) {
@@ -39,6 +44,8 @@ public class ProvisionController extends CommonController{
 	@GetMapping(value="/provision/createProvision")
 	public String createProvision (Model model) {
 		ProvisionEntity provisionEntity= new ProvisionEntity();
+		List<ProvisionCategoryEntity> provisionCategoryEntities=provisionCategoryService.getAllProvisionCategories();
+		model.addAttribute("categories",provisionCategoryEntities);
 		model.addAttribute("provisionForm", provisionEntity);
 		return "provisionFormPage";
 	}
