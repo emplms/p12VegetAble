@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.ProvisionCategoryEntity;
 import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.ProvisionEntity;
+import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.RequestEntity;
 import com.emmanuel.plumas.p12JavaVegetAbleWEB.model.UserEntity;
 
 @FeignClient(name="p12JavaVegetable-API", url="localhost:9001")
@@ -37,4 +38,7 @@ public interface ApiProxy {
 	
 	@GetMapping(value="/provisionCategories")
 	public List<ProvisionCategoryEntity> getAllProvisionCategories();
+	
+	@GetMapping(value="request/{userIdentifiant}")
+	public List<RequestEntity> getRequestsByUserIdentifiant(@PathVariable String userIdentifiant);
 }
