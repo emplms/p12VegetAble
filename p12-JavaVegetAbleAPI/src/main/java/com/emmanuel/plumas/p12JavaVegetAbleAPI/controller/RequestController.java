@@ -17,8 +17,13 @@ public class RequestController {
 	@Autowired
 	private RequestService requestService;
 	
-	@GetMapping(value="request/{userIdentifiant}")
+	@GetMapping(value="request/sended/{userIdentifiant}")
 	public List<RequestEntity> getRequestsByUserIdentifiant(@PathVariable String userIdentifiant){
-		return requestService.getRequestsByUserIdentifiant(userIdentifiant); 
+		return requestService.getSendedRequestsByUserIdentifiant(userIdentifiant); 
+	}
+	
+	@GetMapping(value="request/received/{userIdentifiant}")
+	public List<RequestEntity> getReceivedRequestByUserIdentifiant(@PathVariable String userIdentifiant){
+		return requestService.getReceivedRequestByUserIdentifiant(userIdentifiant);
 	}
 }

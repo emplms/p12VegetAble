@@ -14,8 +14,11 @@ public class RequestService {
 	@Autowired
 	private ApiProxy apiProxy;
 	
-	public List<RequestEntity> getRequestByUserIdentifiant(String userIdentifiant){
-		return apiProxy.getRequestsByUserIdentifiant(userIdentifiant); 
+	public List<RequestEntity> getSendedRequestByUserIdentifiant(String userIdentifiant){
+		return apiProxy.getSendedRequestsByUserIdentifiant(userIdentifiant); 
 	}
 	
+	public List<RequestEntity> getReceivedRequestByUserIdentifiant(String userIdentifiant){
+		return apiProxy.getReceivedRequestByUserIdentifiant(userIdentifiant);
+	}
 }

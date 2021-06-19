@@ -39,6 +39,9 @@ public interface ApiProxy {
 	@GetMapping(value="/provisionCategories")
 	public List<ProvisionCategoryEntity> getAllProvisionCategories();
 	
-	@GetMapping(value="request/{userIdentifiant}")
-	public List<RequestEntity> getRequestsByUserIdentifiant(@PathVariable String userIdentifiant);
+	@GetMapping(value="request/sended/{userIdentifiant}")
+	public List<RequestEntity> getSendedRequestsByUserIdentifiant(@PathVariable String userIdentifiant);
+	
+	@GetMapping(value="request/received/{userIdentifiant}")
+	public List<RequestEntity> getReceivedRequestByUserIdentifiant(@PathVariable String userIdentifiant);
 }

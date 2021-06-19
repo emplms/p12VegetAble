@@ -16,11 +16,19 @@ public class RequestController extends CommonController {
 	@Autowired
 	private RequestService requestService;
 	
-	@GetMapping(value="/requestByUserIdentifiant")
-	public String getRequestByUserIdentifiant(Model model){
-		List <RequestEntity> requestEntities = requestService.getRequestByUserIdentifiant(getUserNamePrincipal());
+	@GetMapping(value="/requestSendedByUserIdentifiant")
+	public String getSendedRequestByUserIdentifiant(Model model){
+		List <RequestEntity> requestEntities = requestService.getSendedRequestByUserIdentifiant(getUserNamePrincipal());
 		model.addAttribute("requestEntities", requestEntities);
-		return "requestsByUserIdentifiant";
+		return "requestsbyuseridentifiant";
+		
+	}
+	
+	@GetMapping(value="/requestReceivedByUserIdentifiant")
+	public String getReceivedRequestByUserIdentifiant(Model model){
+		List <RequestEntity> requestEntities = requestService.getReceivedRequestByUserIdentifiant(getUserNamePrincipal());
+		model.addAttribute("requestEntities", requestEntities);
+		return "receivedrequestsbyuseridentifiant";
 		
 	}
 	
