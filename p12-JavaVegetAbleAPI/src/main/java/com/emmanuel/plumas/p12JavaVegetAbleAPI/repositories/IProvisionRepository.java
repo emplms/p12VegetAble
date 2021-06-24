@@ -15,4 +15,7 @@ public interface IProvisionRepository extends CrudRepository <ProvisionEntity, L
 
 	List<ProvisionEntity> findByUserEntity(UserEntity userEntity);
 
+	ProvisionEntity findByProvisionId(Long provisionId);
+	
+	List<ProvisionEntity> findByUserEntityUserId(Long userId);
 }

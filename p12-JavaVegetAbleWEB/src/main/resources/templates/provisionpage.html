@@ -55,6 +55,7 @@
 				       			<th>Date de disponibilité</th>
 				       			<th>Statut du don</th>
 			        			<th>Nom du Veget'able user</th>
+			        			<th>Demande de don</th>
 				     		</tr>
 			     		</thead>
 			     		<tbody>
@@ -65,6 +66,9 @@
 						        <td th:text="${#dates.format(provision.provisionAvailibilityDate,'dd-MM-yyyy')}"></td>
 						        <td th:text="${provision.provisionStatus}"></td>
 						        <td th:text="${provision.userEntity.userFirstName}"></td>
+						        <td th:if="${provision.provisionStatus =='Disponible' and provision.userEntity.userFirstName!= principal and principal!='anonymousUser'}">
+						        	<a th:href="@{/requestCreation/{provisionId}(provisionId=${provision.provisionId})}">Réserver</a>
+						        </td>
 						     </tr>
 					     </tbody>
 		    		</table>

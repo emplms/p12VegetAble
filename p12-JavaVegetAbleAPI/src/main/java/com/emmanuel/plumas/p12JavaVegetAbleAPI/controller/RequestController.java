@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.emmanuel.plumas.p12JavaVegetAbleAPI.model.RequestEntity;
@@ -25,5 +27,10 @@ public class RequestController {
 	@GetMapping(value="request/received/{userIdentifiant}")
 	public List<RequestEntity> getReceivedRequestByUserIdentifiant(@PathVariable String userIdentifiant){
 		return requestService.getReceivedRequestByUserIdentifiant(userIdentifiant);
+	}
+	
+	@PostMapping(value="request/createRequestEntity")
+	public void setRequestEntity(@RequestBody RequestEntity requestEntity) {
+		requestService.createRequestEntity(requestEntity);
 	}
 }

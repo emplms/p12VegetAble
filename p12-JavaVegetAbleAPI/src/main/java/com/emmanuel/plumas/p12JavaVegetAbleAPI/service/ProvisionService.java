@@ -29,6 +29,13 @@ public class ProvisionService {
 		return provisionEntities;
 	}
 	
+	
+	public ProvisionEntity getProvisionEntityByProvisionId(Long provisionId) {
+		ProvisionEntity provisionEntity= new ProvisionEntity();
+		provisionEntity = provisionRepository.findByProvisionId(provisionId);
+		return provisionEntity;
+	}
+	
 	public void createProvisionEntity(ProvisionEntity provisionEntity) {
 		provisionRepository.save(provisionEntity);
 	}

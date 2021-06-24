@@ -30,6 +30,8 @@ public class ProvisionController extends CommonController{
 	@GetMapping(value="/provisions")
 	public String getProvisionsEntities(Model model) {
 		List<ProvisionEntity> provisionEntities=provisionService.getAllProvisions();
+		String userIdentifiant=getUserNamePrincipal();
+		model.addAttribute("principal", userIdentifiant);
 		model.addAttribute("provisionEntities", provisionEntities);
 		return "provisionpage";
 	}

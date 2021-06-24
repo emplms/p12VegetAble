@@ -21,4 +21,9 @@ public class RequestService {
 	public List<RequestEntity> getReceivedRequestByUserIdentifiant(String userIdentifiant){
 		return apiProxy.getReceivedRequestByUserIdentifiant(userIdentifiant);
 	}
+
+	public void createRequest(RequestEntity requestEntity) {
+		apiProxy.setRequestEntity(requestEntity);
+		
+	}
 }

@@ -44,4 +44,7 @@ public interface ApiProxy {
 	
 	@GetMapping(value="request/received/{userIdentifiant}")
 	public List<RequestEntity> getReceivedRequestByUserIdentifiant(@PathVariable String userIdentifiant);
+	
+	@PostMapping(value="request/createRequestEntity")
+	public void setRequestEntity(@RequestBody RequestEntity requestEntity);
 }
