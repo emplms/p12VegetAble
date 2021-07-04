@@ -81,4 +81,10 @@ public class RequestController extends CommonController {
 		return"redirect:/requestReceivedByUserIdentifiant";
 	}
 	
+	@GetMapping(value="/request/deliverResquest{requestId}")
+	public String setRequestDeliveryStatus(@PathVariable Long requestId) {
+		requestService.setRequestStatusOnDelivery(requestId);
+		return "redirect:/requestSendedByUserIdentifiant";
+	}
+	
 }

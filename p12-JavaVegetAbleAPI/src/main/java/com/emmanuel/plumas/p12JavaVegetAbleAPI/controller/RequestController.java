@@ -43,4 +43,9 @@ public class RequestController {
 	public void refuseRequest(@PathVariable Long requestId) {
 		requestService.refuseRequest(requestId);
 	}
+	
+	@GetMapping(value="refuse/delivery/{requestId}")
+	public void setRequestStatusOnDelivery(@PathVariable Long requestId) {
+		requestService.setRequestStatusOnDelivery(requestId);
+	}
 }

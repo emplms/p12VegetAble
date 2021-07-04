@@ -69,6 +69,13 @@ public class RequestService {
 		return requestRepository.findByProvisionEntityProvisionId(provisionId);
 	}
 
+	public void setRequestStatusOnDelivery(Long requestId) {
+		RequestEntity requestEntity = requestRepository.findByRequestId(requestId);
+		requestEntity.setRequestStatus("Livrée");
+		requestRepository.save(requestEntity);
+
+	}
+
 	
 
 }

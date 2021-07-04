@@ -57,6 +57,9 @@
 					       			<th>Date de demande</th>
 					       			<th>Statut de la demande</th>
 				        			<th>Nom du Veget'able user</th>
+				        			<th>Téléphone du Veget'able user</th>
+				        			<th>Mail du Veget'able user</th>
+				        			<th>Livraison</th>
 					     		</tr>
 				     		</thead>
 				     		<tbody>
@@ -67,6 +70,15 @@
 							        <td th:text="${#dates.format(request.requestDate,'dd-MM-yyyy')}"></td>
 							        <td th:text="${request.requestStatus}"></td>
 							        <td th:text="${request.provisionEntity.userEntity.userFirstName}"></td>
+							        <td th:if="${request.requestStatus == 'En attente de livraison'}">
+							        	<a th:text="${request.provisionEntity.userEntity.adressEntity.adressEmail}"></a>
+							        </td>
+							        <td th:if="${request.requestStatus == 'En attente de livraison'}">
+							        	<a th:text="${request.provisionEntity.userEntity.adressEntity.adressPhoneNumber}"></a>
+							        </td>	
+							        <td th:if="${request.requestStatus == 'En attente de livraison'}">
+										<a class="btn btn-info" th:href="@{/request/deliverResquest{requestId}(requestId=${request.requestId})}" role="button">Livraison Reçue</a>
+									</td>
 							     </tr>
 						     </tbody>
 			    		</table>

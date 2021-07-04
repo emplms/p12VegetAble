@@ -54,4 +54,7 @@ public interface ApiProxy {
 	@GetMapping(value="request/refuseRequest/{requestId}")
 	public void refuseRequest(@PathVariable Long requestId);
 	
+	@GetMapping(value="refuse/delivery/{requestId}")
+	public void setRequestStatusOnDelivery(@PathVariable Long requestId);
+	
 }

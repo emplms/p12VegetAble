@@ -36,4 +36,9 @@ public class RequestService {
 		apiProxy.refuseRequest(requestId);
 		
 	}
+
+	public void setRequestStatusOnDelivery(Long requestId) {
+		apiProxy.setRequestStatusOnDelivery(requestId);
+		
+	}
 }
