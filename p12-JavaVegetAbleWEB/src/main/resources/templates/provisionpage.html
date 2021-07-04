@@ -66,8 +66,8 @@
 						        <td th:text="${#dates.format(provision.provisionAvailibilityDate,'dd-MM-yyyy')}"></td>
 						        <td th:text="${provision.provisionStatus}"></td>
 						        <td th:text="${provision.userEntity.userFirstName}"></td>
-						        <td th:if="${provision.provisionStatus =='Disponible' and provision.userEntity.userFirstName!= principal and principal!='anonymousUser'}">
-						        	<a th:href="@{/requestCreation/{provisionId}(provisionId=${provision.provisionId})}">Réserver</a>
+						        <td th:if="${provision.userEntity.userFirstName!= principal and principal!='anonymousUser'}">
+						        	<a class="btn btn-info" th:href="@{/requestCreation/{provisionId}(provisionId=${provision.provisionId})}" role="button">Réserver</a>
 						        </td>
 						     </tr>
 					     </tbody>

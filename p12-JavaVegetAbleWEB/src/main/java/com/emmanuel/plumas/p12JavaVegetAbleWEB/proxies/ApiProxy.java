@@ -47,4 +47,11 @@ public interface ApiProxy {
 	
 	@PostMapping(value="request/createRequestEntity")
 	public void setRequestEntity(@RequestBody RequestEntity requestEntity);
+
+	@GetMapping(value="request/acceptRequest/{requestId}")
+	public void acceptRequest(@PathVariable Long requestId);
+
+	@GetMapping(value="request/refuseRequest/{requestId}")
+	public void refuseRequest(@PathVariable Long requestId);
+	
 }

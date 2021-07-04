@@ -26,4 +26,14 @@ public class RequestService {
 		apiProxy.setRequestEntity(requestEntity);
 		
 	}
+
+	public void acceptRequest(Long requestId) {
+		apiProxy.acceptRequest(requestId);
+		
+	}
+
+	public void refuseRequest(Long requestId) {
+		apiProxy.refuseRequest(requestId);
+		
+	}
 }

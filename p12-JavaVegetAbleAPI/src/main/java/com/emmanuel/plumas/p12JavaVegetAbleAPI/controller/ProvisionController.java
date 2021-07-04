@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.emmanuel.plumas.p12JavaVegetAbleAPI.Dto.ProvisionDtoEntity;
 import com.emmanuel.plumas.p12JavaVegetAbleAPI.model.ProvisionEntity;
 import com.emmanuel.plumas.p12JavaVegetAbleAPI.service.ProvisionService;
 
@@ -19,12 +20,12 @@ public class ProvisionController {
 	private ProvisionService provisionService;
 	
 	@GetMapping(value="/provisions")
-	public List<ProvisionEntity> getAllProvisions(){
+	public List<ProvisionDtoEntity> getAllProvisions(){
 		return provisionService.getAllProvisions();
 	}
 	
 	@GetMapping(value="/provision/{userIdentifiant}")
-	public List<ProvisionEntity> getProvisionsByUserIdentifiant(@PathVariable String userIdentifiant){
+	public List<ProvisionDtoEntity> getProvisionsByUserIdentifiant(@PathVariable String userIdentifiant){
 		return provisionService.getProvisionsByUserIdentifiant(userIdentifiant);
 	}
 	

@@ -5,6 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.emmanuel.plumas.p12JavaVegetAbleAPI.Dto.ProvisionDtoEntity;
+import com.emmanuel.plumas.p12JavaVegetAbleAPI.Dto.ProvisionTransformer;
 import com.emmanuel.plumas.p12JavaVegetAbleAPI.model.ProvisionEntity;
 import com.emmanuel.plumas.p12JavaVegetAbleAPI.model.UserEntity;
 import com.emmanuel.plumas.p12JavaVegetAbleAPI.repositories.IProvisionRepository;
@@ -18,17 +20,19 @@ public class ProvisionService {
 	@Autowired
 	private UserService userService;
 	
-	public List<ProvisionEntity> getAllProvisions(){
+	@Autowired
+	private ProvisionTransformer provisionTransformer;
+	
+	public List<ProvisionDtoEntity> getAllProvisions(){
 		List<ProvisionEntity> provisionEntities=(List<ProvisionEntity>) provisionRepository.findAll();
-		return provisionEntities;
+		return provisionTransformer.transformEntityListIntoDtoList(provisionEntities);
 	}
 
-	public List<ProvisionEntity> getProvisionsByUserIdentifiant(String userIdentifiant) {
+	public List<ProvisionDtoEntity> getProvisionsByUserIdentifiant(String userIdentifiant) {
 		UserEntity userEntity=userService.getUserEntityByUserIdentifiant(userIdentifiant);
 		List<ProvisionEntity> provisionEntities=provisionRepository.findByUserEntity(userEntity);
-		return provisionEntities;
+		return provisionTransformer.transformEntityListIntoDtoList(provisionEntities);
 	}
-	
 	
 	public ProvisionEntity getProvisionEntityByProvisionId(Long provisionId) {
 		ProvisionEntity provisionEntity= new ProvisionEntity();
@@ -36,8 +40,7 @@ public class ProvisionService {
 		return provisionEntity;
 	}
 	
-	public void createProvisionEntity(ProvisionEntity provisionEntity) {
+	public void createProvisionEntity(ProvisionEntity provisionEntity) {		
 		provisionRepository.save(provisionEntity);
 	}
-	
 }

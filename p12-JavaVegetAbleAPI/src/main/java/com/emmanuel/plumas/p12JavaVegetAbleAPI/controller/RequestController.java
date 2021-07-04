@@ -33,4 +33,14 @@ public class RequestController {
 	public void setRequestEntity(@RequestBody RequestEntity requestEntity) {
 		requestService.createRequestEntity(requestEntity);
 	}
+	
+	@GetMapping(value="request/acceptRequest/{requestId}")
+	public void acceptRequest(@PathVariable Long requestId) {
+		requestService.acceptRequest(requestId);
+	}
+	
+	@GetMapping(value="request/refuseRequest/{requestId}")
+	public void refuseRequest(@PathVariable Long requestId) {
+		requestService.refuseRequest(requestId);
+	}
 }

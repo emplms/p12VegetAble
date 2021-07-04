@@ -67,6 +67,10 @@
 							        <td th:text="${#dates.format(request.requestDate,'dd-MM-yyyy')}"></td>
 							        <td th:text="${request.requestStatus}"></td>
 							        <td th:text="${request.userEntity.userFirstName}"></td>
+							        <td th:if="${request.requestStatus == 'En attente de réponse'}">
+							        	<a class="btn btn-info" th:href="@{request/acceptRequestReceivedByUserIdentifiant/{requestId}(requestId=${request.requestId})}"role="button">Accepter</a>
+							        	<a class="btn btn-info" th:href="@{request/refuseRequestReceivedByUserIdentifiant/{requestId}(requestId=${request.requestId})}" role="button">Refuser</a>
+						        	</td>
 							     </tr>
 						     </tbody>
 			    		</table>

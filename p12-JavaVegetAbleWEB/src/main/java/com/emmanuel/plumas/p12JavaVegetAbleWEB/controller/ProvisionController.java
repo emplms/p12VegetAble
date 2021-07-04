@@ -1,5 +1,6 @@
 package com.emmanuel.plumas.p12JavaVegetAbleWEB.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,9 +31,17 @@ public class ProvisionController extends CommonController{
 	@GetMapping(value="/provisions")
 	public String getProvisionsEntities(Model model) {
 		List<ProvisionEntity> provisionEntities=provisionService.getAllProvisions();
+		List<ProvisionEntity> availableProvisionEntities=new ArrayList<>();
+		if(!provisionEntities.isEmpty()) {
+			for(ProvisionEntity provisionEntity : provisionEntities) {
+				if(provisionEntity.getProvisionStatus().equals("Disponible")) {
+					availableProvisionEntities.add(provisionEntity);
+				}
+			}
+		}
 		String userIdentifiant=getUserNamePrincipal();
 		model.addAttribute("principal", userIdentifiant);
-		model.addAttribute("provisionEntities", provisionEntities);
+		model.addAttribute("provisionEntities", availableProvisionEntities);
 		return "provisionpage";
 	}
 	

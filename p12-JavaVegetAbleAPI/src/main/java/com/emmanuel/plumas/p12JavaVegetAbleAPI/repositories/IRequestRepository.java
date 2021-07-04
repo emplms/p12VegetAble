@@ -15,4 +15,6 @@ public interface IRequestRepository extends CrudRepository<RequestEntity, Long>{
 	List<RequestEntity> findByUserEntityUserIdentifiant(String userIdentifiant);
 	
 	List<RequestEntity>findByProvisionEntityProvisionId(Long provisionId);
+	
+	RequestEntity findByRequestId(Long requestId);
 }

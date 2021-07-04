@@ -69,4 +69,16 @@ public class RequestController extends CommonController {
 	}
 	
 	
+	@GetMapping(value="/request/acceptRequestReceivedByUserIdentifiant/{requestId}")
+	public String getRequestAcceptation(@PathVariable Long requestId) {
+		requestService.acceptRequest(requestId);
+		return"redirect:/requestReceivedByUserIdentifiant";
+	}
+	
+	@GetMapping(value="/request/refuseRequestReceivedByUserIdentifiant/{requestId}")
+	public String getRequestRefusal(@PathVariable Long requestId) {
+		requestService.refuseRequest(requestId);
+		return"redirect:/requestReceivedByUserIdentifiant";
+	}
+	
 }
