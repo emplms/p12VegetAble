@@ -39,8 +39,7 @@ public class ProvisionController extends CommonController{
 				}
 			}
 		}
-		String userIdentifiant=getUserNamePrincipal();
-		model.addAttribute("principal", userIdentifiant);
+		model.addAttribute("principal", getUserNamePrincipal());
 		model.addAttribute("provisionEntities", availableProvisionEntities);
 		return "provisionpage";
 	}
@@ -49,6 +48,7 @@ public class ProvisionController extends CommonController{
 	public String getProvisionsByUserIdentifiant(Model model) {
 		List<ProvisionEntity> provisionEntities=provisionService.getProvisionsByUserIdentifiant(getUserNamePrincipal());
 		model.addAttribute("provisionEntities",provisionEntities);
+		model.addAttribute("principal", getUserNamePrincipal());
 		return "provisionsbyuseridentifiant";
 	}
 	
@@ -58,6 +58,7 @@ public class ProvisionController extends CommonController{
 		List<ProvisionCategoryEntity> provisionCategoryEntities=provisionCategoryService.getAllProvisionCategories();
 		model.addAttribute("categories",provisionCategoryEntities);
 		model.addAttribute("provisionForm", provisionEntity);
+		model.addAttribute("principal", getUserNamePrincipal());
 		return "provisionFormPage";
 	}
 	

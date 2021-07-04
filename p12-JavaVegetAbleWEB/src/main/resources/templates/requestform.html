@@ -6,6 +6,9 @@
 	</head>
 		<body>
 		<div class="container-expand-md">
+			<!-- Barre de navigation -->
+			<div th:insert="~{provisionpage :: menu}"></div>
+			
 			<div class="row jumbotron bg-info text-white">
 				<div class="col"> 
 					<h1>Bienvenue dans Veget'Able - l'univers du partage végétal !</h1>
@@ -39,6 +42,9 @@
 						</div>
 					</div>
 				</div>
+			</div>
+			<div class="row">
+				<a class="col text-info" th:text="${principal == 'anonymousUser'} ? 'Vous êtes déconnectés' : 'Vous êtes connectés en tant que '+ ${principal}"></a>
 			</div>
 		</div>
 	

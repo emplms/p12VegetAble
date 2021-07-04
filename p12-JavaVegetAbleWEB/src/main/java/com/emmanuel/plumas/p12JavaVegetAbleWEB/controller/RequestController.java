@@ -30,6 +30,7 @@ public class RequestController extends CommonController {
 	public String getSendedRequestByUserIdentifiant(Model model) {
 		List<RequestEntity> requestEntities = requestService.getSendedRequestByUserIdentifiant(getUserNamePrincipal());
 		model.addAttribute("requestEntities", requestEntities);
+		model.addAttribute("principal", getUserNamePrincipal());
 		return "requestsbyuseridentifiant";
 
 	}
@@ -39,6 +40,7 @@ public class RequestController extends CommonController {
 		List<RequestEntity> requestEntities = requestService
 				.getReceivedRequestByUserIdentifiant(getUserNamePrincipal());
 		model.addAttribute("requestEntities", requestEntities);
+		model.addAttribute("principal", getUserNamePrincipal());
 		return "receivedrequestsbyuseridentifiant";
 
 	}
@@ -58,6 +60,7 @@ public class RequestController extends CommonController {
 		//model.addAttribute("userId",userId);
 		//model.addAttribute("provisionId",provisionId);
 		model.addAttribute("requestForm",requestEntity);
+		model.addAttribute("principal", getUserNamePrincipal());
 		return "requestform";
 	}
 	

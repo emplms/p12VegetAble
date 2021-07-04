@@ -14,7 +14,7 @@ import com.emmanuel.plumas.p12JavaVegetAbleWEB.service.UserService;
 
 
 @Controller
-public class UserController {
+public class UserController extends CommonController{
 
 	@Autowired
 	private UserService userService;
@@ -23,6 +23,7 @@ public class UserController {
 	public String getUserEntities(Model model) {
 		List<UserEntity> userEntities=userService.getAllUsers();
 		model.addAttribute("userEntities",userEntities);
+		model.addAttribute("principal", getUserNamePrincipal());
 		return "userspage";
 	}
 	

@@ -17,50 +17,46 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="card">
-						<div class="card-header text-info">Les Veget'able User's</div>
+						<div class="card-header text-info">Veget'able - Les membres</div>
 						<div class="card-body">
 							<h5 class="card-title"></h5>
 							<ul class="list-group">
-								<li class="list-group-item"><a th:href="@{http://localhost:8080/users}">Liste des utilisateurs</a></li>
+								<li class="list-group-item"><a th:href="@{http://localhost:8080/users}">Tous les membres</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3">							
 					<div class="card">
-						<div class="card-header text-info">Les Veget'able</div>
+						<div class="card-header text-info">Veget'able - Les dons</div>
 						<div class="card-body">
-							<h5 class="card-title">Les dons</h5>
+							<h5 class="card-title"></h5>
 							<ul class="list-group">
-								<li class="list-group-item"><a th:href="@{http://localhost:8080/provisions}">Liste des dons</a></li>
-								<li class="list-group-item"><a th:href="@{http://localhost:8080/provisionsByUserIdentifiant}">Liste de vos dons</a></li>
+								<li class="list-group-item"><a th:href="@{http://localhost:8080/provisions}">Tous les dons</a></li>
+								<li class="list-group-item"><a th:href="@{http://localhost:8080/provisionsByUserIdentifiant}">Mes dons</a></li>
 								<li class="list-group-item"><a th:href="@{http://localhost:8080/provision/createProvision}">Créer un don</a></li>
 							</ul>
-							<h5 class="card-title">Les dons des autres</h5>
-							<ul class="list-group">
-								<li class="list-group-item"><a>Liste des dons des autres Veget'able user's</a></li>
-							</ul>	
 						</div>
 					</div>	
 				</div>
 				<div class="col-md-3">							
 					<div class="card">
-						<div class="card-header text-info">Les demandes</div>
+						<div class="card-header text-info">Veget'able - Les échanges</div>
 						<div class="card-body">
-							<h5 class="card-title">Mes demandes envoyées</h5>
+							<h5 class="card-title"></h5>
 							<ul class="list-group">
-								<li class="list-group-item"><a th:href="@{http://localhost:8080/requestSendedByUserIdentifiant}">Liste de mes demandes</a></li>
+								<li class="list-group-item"><a th:href="@{http://localhost:8080/requestSendedByUserIdentifiant}">Mes demandes envoyées</a></li>
 							</ul>
-							<h5 class="card-title">Mes demandes reçues</h5>
+							<h5 class="card-title"></h5>
 							<ul class="list-group">
-								<li class="list-group-item"><a th:href="@{http://localhost:8080/requestReceivedByUserIdentifiant}">Liste des demandes reçues des autres Veget'able user's</a></li>
+								<li class="list-group-item"><a th:href="@{http://localhost:8080/requestReceivedByUserIdentifiant}">Mes demandes reçues</a></li>
 							</ul>	
 						</div>
 					</div>	
 				</div>
 				<div class="col-md-3">							
 					<div class="card">
-						<div class="card-header text-info">Votre profil utilisateur</div>
+						<div class="card-header text-info">Mon profil utilisateur</div>
 							<div class="card-body">
 								<p th:text="${principal == 'anonymousUser'} ? 'Vous êtes déconnectés' : 'Vous êtes connectés en tant que '+ ${principal}"></p>
 								<ul th:if="${principal=='anonymousUser'}" class="list-group">
