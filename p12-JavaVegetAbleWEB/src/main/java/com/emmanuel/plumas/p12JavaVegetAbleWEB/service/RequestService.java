@@ -24,21 +24,17 @@ public class RequestService {
 
 	public void createRequest(RequestEntity requestEntity) {
 		apiProxy.setRequestEntity(requestEntity);
-		
 	}
 
 	public void acceptRequest(Long requestId) {
 		apiProxy.acceptRequest(requestId);
-		
 	}
 
 	public void refuseRequest(Long requestId) {
 		apiProxy.refuseRequest(requestId);
-		
 	}
 
 	public void setRequestStatusOnDelivery(Long requestId) {
 		apiProxy.setRequestStatusOnDelivery(requestId);
-		
 	}
 }

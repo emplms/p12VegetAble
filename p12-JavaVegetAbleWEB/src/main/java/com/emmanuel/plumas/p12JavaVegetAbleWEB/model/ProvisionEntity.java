@@ -88,5 +88,4 @@ public class ProvisionEntity {
 		this.userEntity = userEntity;
 	}
 
-	
 }

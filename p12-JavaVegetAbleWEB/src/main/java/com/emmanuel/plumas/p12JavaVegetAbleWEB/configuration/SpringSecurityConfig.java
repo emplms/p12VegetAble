@@ -44,12 +44,11 @@ import com.emmanuel.plumas.p12JavaVegetAbleWEB.security.CustomUserDetailsService
 			http
 				.authorizeRequests()
 					.antMatchers("/users",
-								"/provisionbyuseridentifiant",
 								"/provisionsByUserIdentifiant",
 								"/provision/createProvision",
 								"/requestSendedByUserIdentifiant",
 								"/requestReceivedByUserIdentifiant",
-								"/requestCreationWithComment").authenticated()
+								"/requestCreation","/request/*").authenticated()
 				.and()
 					.formLogin();
 

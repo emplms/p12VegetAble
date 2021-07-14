@@ -32,7 +32,6 @@ public class RequestController extends CommonController {
 		model.addAttribute("requestEntities", requestEntities);
 		model.addAttribute("principal", getUserNamePrincipal());
 		return "requestsbyuseridentifiant";
-
 	}
 
 	@GetMapping(value = "/requestReceivedByUserIdentifiant")
@@ -42,13 +41,11 @@ public class RequestController extends CommonController {
 		model.addAttribute("requestEntities", requestEntities);
 		model.addAttribute("principal", getUserNamePrincipal());
 		return "receivedrequestsbyuseridentifiant";
-
 	}
 
 	@GetMapping(value = "/requestCreation/{provisionId}")
 	public String getRequestCreation(Model model, @PathVariable Long provisionId) {
 		RequestEntity requestEntity = new RequestEntity();
-		
 		Long userId=userService.getUserEntityByUserIdentifiant(getUserNamePrincipal()).getUserId();
 		UserEntity userEntity=new UserEntity();
 		userEntity.setUserId(userId);
@@ -57,8 +54,6 @@ public class RequestController extends CommonController {
 		ProvisionEntity provisionEntity=new ProvisionEntity();
 		provisionEntity.setProvisionId(provisionId);
 		requestEntity.setProvisionEntity(provisionEntity);
-		//model.addAttribute("userId",userId);
-		//model.addAttribute("provisionId",provisionId);
 		model.addAttribute("requestForm",requestEntity);
 		model.addAttribute("principal", getUserNamePrincipal());
 		return "requestform";
@@ -70,7 +65,6 @@ public class RequestController extends CommonController {
 		return "redirect:/requestSendedByUserIdentifiant";
 
 	}
-	
 	
 	@GetMapping(value="/request/acceptRequestReceivedByUserIdentifiant/{requestId}")
 	public String getRequestAcceptation(@PathVariable Long requestId) {

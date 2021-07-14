@@ -24,76 +24,74 @@
 						<div class="card-body">
 							<h5 class="card-title text-info">Vos informations</h5>
 							<form th:action="@{/user/createUser}" th:object="${userForm}" method="POST" >						
-									<div class="row mt-3  col-sm-12">
-										<div class="col-sm-3">
-											<label for="nom">Nom</label>
-										</div>
-										<div class="col-sm-6">
-											<textarea class="form-control" th:field="*{userLastName}" placeholder="Nom" rows="1"></textarea>
-										</div>	
+								<div class="row mt-3  col-sm-12">
+									<div class="col-sm-3">
+										<label for="nom">Nom</label>
 									</div>
-									<div class="row mt-3  col-sm-12">
-										<div class="col-sm-3">
-											<label for="Prénom">Prénom</label>
-										</div>
-										<div class="col-sm-6">	
-											<textarea class="form-control" th:field="*{userFirstName}" placeholder="Prénom" rows="1"></textarea>
-										</div>	
+									<div class="col-sm-6">
+										<textarea class="form-control" th:field="*{userLastName}" placeholder="Nom" rows="1"></textarea>
+									</div>	
+								</div>
+								<div class="row mt-3  col-sm-12">
+									<div class="col-sm-3">
+										<label for="Prénom">Prénom</label>
 									</div>
-									<div class="row mt-3  col-sm-12">
-										<div class="col-sm-3">
-											<label for="Identifiant">Identifiant</label>
-										</div>
-										<div class="col-sm-6">	
-											<textarea class="form-control" th:field="*{userIdentifiant}" placeholder="Identifiant" rows="1"></textarea>
-										</div>	
+									<div class="col-sm-6">	
+										<textarea class="form-control" th:field="*{userFirstName}" placeholder="Prénom" rows="1"></textarea>
+									</div>	
+								</div>
+								<div class="row mt-3  col-sm-12">
+									<div class="col-sm-3">
+										<label for="Identifiant">Identifiant</label>
 									</div>
-									<div class="row mt-3  col-sm-12">
-										<div class="col-sm-3">
-											<label for="Mot de passe">Mot de passe</label>
-										</div>
-										<div class="col-sm-6">
-											<textarea class="form-control" th:field="*{userPassword}" placeholder="Mot de passe" rows="1"></textarea>
-										</div>	
+									<div class="col-sm-6">	
+										<textarea class="form-control" th:field="*{userIdentifiant}" placeholder="Identifiant" rows="1"></textarea>
+									</div>	
+								</div>
+								<div class="row mt-3  col-sm-12">
+									<div class="col-sm-3">
+										<label for="Mot de passe">Mot de passe</label>
 									</div>
-									<div class="row mt-3  col-sm-12">
-										<div class="col-sm-3">
-											<label for="Mot de passe">Email</label>
-										</div>
-										<div class="col-sm-6">
-											<textarea class="form-control" th:field="*{adressEntity.adressEmail}" placeholder="Email" rows="1"></textarea>
-										</div>	
+									<div class="col-sm-6">
+										<textarea class="form-control" th:field="*{userPassword}" placeholder="Mot de passe" rows="1"></textarea>
+									</div>	
+								</div>
+								<div class="row mt-3  col-sm-12">
+									<div class="col-sm-3">
+										<label for="Mot de passe">Email</label>
 									</div>
-									<div class="row mt-3  col-sm-12">
-										<div class="col-sm-3">
-											<label for="Mot de passe">Numéro de téléphone</label>
-										</div>
-										<div class="col-sm-6">	
-											<textarea class="form-control" th:field="*{adressEntity.adressPhoneNumber}" placeholder="Numéro de téléphone" rows="1"></textarea>
-										</div>	
+									<div class="col-sm-6">
+										<textarea class="form-control" th:field="*{adressEntity.adressEmail}" placeholder="Email" rows="1"></textarea>
+									</div>	
+								</div>
+								<div class="row mt-3  col-sm-12">
+									<div class="col-sm-3">
+										<label for="Mot de passe">Numéro de téléphone</label>
 									</div>
-									<div class="row mt-3  col-sm-12">
-										<div class="col-sm-3">
-											<label for="Mot de passe">Ville</label>
-										</div>	
-										<div class="col-sm-6">
-											<textarea class="form-control" th:field="*{adressEntity.adressTown}" placeholder="Ville" rows="1"></textarea>
-										</div>	
+									<div class="col-sm-6">	
+										<textarea class="form-control" th:field="*{adressEntity.adressPhoneNumber}" placeholder="Numéro de téléphone" rows="1"></textarea>
+									</div>	
+								</div>
+								<div class="row mt-3  col-sm-12">
+									<div class="col-sm-3">
+										<label for="Mot de passe">Ville</label>
+									</div>	
+									<div class="col-sm-6">
+										<textarea class="form-control" th:field="*{adressEntity.adressTown}" placeholder="Ville" rows="1"></textarea>
+									</div>	
+								</div>
+								<div class="row mt-3  col-sm-12">
+									<div class="col-sm-3">
+										<label for="Mot de passe">Code Postal</label>
 									</div>
-									<div class="row mt-3  col-sm-12">
-										<div class="col-sm-3">
-											<label for="Mot de passe">Code Postal</label>
-										</div>
-										<div class="col-sm-6">	
-											<textarea class="form-control" th:field="*{adressEntity.adressZipCode}" placeholder="Code Postal" rows="1"></textarea>
-										</div>	
-									</div>
-									<div class="row mt-3">
-				       					<button type="submit" class="btn btn-info btn-block" role="button"> M'inscrire</button>
-				       				</div>					
+									<div class="col-sm-6">	
+										<textarea class="form-control" th:field="*{adressEntity.adressZipCode}" placeholder="Code Postal" rows="1"></textarea>
+									</div>	
+								</div>
+								<div class="row mt-3">
+			       					<button type="submit" class="btn btn-info btn-block" role="button"> M'inscrire</button>
+			       				</div>					
 							</form>
-									
-							
 						</div>
 					</div>
 				</div>
