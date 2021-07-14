@@ -15,34 +15,44 @@
 			</div>
 			<div class="row">
 				<div class="col text-info">
-					<h2>Formulaire de création de compte</h2>
+					<h2>Formulaire de création de don</h2>
 				</div>
 			</div>
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title text-info">Vos informations</h5>
+							<h5 class="card-title text-info"></h5>
 							<form th:action="@{/provision/createProvision}" th:object="${provisionForm}" method="POST" >						
-									<div>
-										<label for="Intitulé">Intitulé</label>
-										<input type="text" th:field="*{provisionName}" placeholder="Intitulé"/>
+									<div class="row mt-3 col-sm-12">
+										<!-- <label for="Intitulé">Intitulé</label>  -->
+										<textarea class="form-control" th:field="*{provisionName}" placeholder="Intitulé" rows="1"></textarea>
 									</div>
-									<div>
-										<label for="Description">Description</label>
-										<input type="text" th:field="*{provisionDescription}" placeholder="Description"/>
+									<div class="row mt-3 col-sm-12">
+										<!--  <label for="Description">Description</label>  -->
+										<textarea class="form-control" th:field="*{provisionDescription}" placeholder="Description" rows="6"></textarea>
 									</div>
-									<div>
-										<label for="Date de disponibilité">Date de disponibilité</label>
-								     	<input type= "datetime" th:field="*{provisionAvailibilityDate}" placeholder="jj-mm-aaaa"/>
+									<div class="row mt-3 col-sm-12">
+										<div class="col-sm-4">
+											<label for="Date de disponibilité">Date de disponibilité</label>
+										</div>
+										<div class="col-sm-4">
+								     		<input type= "datetime" th:field="*{provisionAvailibilityDate}" placeholder="jj-mm-aaaa"/>
+							     		</div>
 									</div>
-									<div>
-										<label for="Catégorie">Catégorie</label>
+									<div class="row mt-3 col-sm-12">
+										<div class="col-sm-4">
+											<label for="Catégorie">Catégorie</label>
+										</div>
+										<div class="col-sm-4">
 								     	<select th:field="*{provisionCategoryEntity.provisionCategoryId}">
     										<option th:each="category : ${categories}" th:value="${category.provisionCategoryId}" th:text="${category.provisionCategoryName}"></option>
 										</select>
+										</div>
 									</div>
-				       			<input type="submit" value="Créer le don"/>				
+				       				<div class="row mt-3">
+				       					<button type="submit" class="btn btn-info btn-block" role="button">Créer le don</button>
+				       				</div>				
 							</form>
 									
 							

@@ -14,31 +14,27 @@
 					<h1>Bienvenue dans Veget'Able - l'univers du partage végétal !</h1>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col text-info">
-					<h2>Ajouter un commentaire à votre demande</h2>
-				</div>
-			</div>
+			
+			
+			
 			<div class="row">
 				<div class="col-sm-6">
 					<div class="card">
 						<div class="card-body">
-							<h5 class="card-title text-info">Votre commentaire</h5>
+							<h5 class="card-title text-info">Commentaire</h5>
 							<form th:action="@{/requestCreation/}" th:object="${requestForm}" method="POST" >						
-									<div>
-										<label for="Intitulé">Commentaire</label>
-										<input type="text" th:field="*{requestComment}" placeholder="Commentaire"/>
-									</div>
-									<div>
-										<input type="hidden" th:field="*{provisionEntity.provisionId}" id="provisionEntity.provisionId">
-										<input type="hidden" th:field="*{userEntity.userId}" id="userEntity.userId">
-									</div>
+								<div>
+									<textarea class="form-control" th:field="*{requestComment}"  rows="6" placeholder="Ajouter un commentaire à votre demande"></textarea>
+								</div>
+								<div>
+									<input type="hidden" th:field="*{provisionEntity.provisionId}" id="provisionEntity.provisionId">
+									<input type="hidden" th:field="*{userEntity.userId}" id="userEntity.userId">
+								</div>
 								
-									
-				       			<input type="submit" value="valider"/>				
-							</form>
-									
-							
+								<div class="row mt-3">
+				       				<button type="submit" class="btn btn-info btn-block" role="button">Valider</button>
+				       			</div>				
+							</form>							
 						</div>
 					</div>
 				</div>
