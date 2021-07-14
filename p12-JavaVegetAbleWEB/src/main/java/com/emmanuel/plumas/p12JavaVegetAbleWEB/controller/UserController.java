@@ -45,7 +45,7 @@ public class UserController extends CommonController{
 			//model.addAttribute("userEntity", userEntity);
 			return "redirect:/login";
 		}else {
-			String noUserCreationMessage="L'identifiant et/ou le mot de passe sont vides ou déjà utilisés. Veuillez recommencer l'inscription en cliquant sur le lien suivnat : ";
+			String noUserCreationMessage="L'identifiant et/ou le mot de passe sont vides ou déjà utilisés. Veuillez recommencer l'inscription en cliquant sur le lien suivant : ";
 			model.addAttribute("noUserCreationMessage",noUserCreationMessage);
 			return "noUserCreation";
 		}
