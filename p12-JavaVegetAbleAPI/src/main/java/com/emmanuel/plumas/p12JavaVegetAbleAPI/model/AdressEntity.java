@@ -39,58 +39,44 @@ public class AdressEntity implements Serializable{
 		this.adressEmail = adressEmail;
 	}
 
-
 	public Long getAdressId() {
 		return adressId;
 	}
-
 
 	public void setAdressId(Long adressId) {
 		this.adressId = adressId;
 	}
 
-
 	public String getAdressTown() {
 		return adressTown;
 	}
-
 
 	public void setAdressTown(String adressTown) {
 		this.adressTown = adressTown;
 	}
 
-
 	public int getAdressZipCode() {
 		return adressZipCode;
 	}
-
 
 	public void setAdressZipCode(int adressZipCode) {
 		this.adressZipCode = adressZipCode;
 	}
 
-
 	public int getAdressPhoneNumber() {
 		return adressPhoneNumber;
 	}
-
 
 	public void setAdressPhoneNumber(int adressPhoneNumber) {
 		this.adressPhoneNumber = adressPhoneNumber;
 	}
 
-
 	public String getAdressEmail() {
 		return adressEmail;
 	}
 
-
 	public void setAdressEmail(String adressEmail) {
 		this.adressEmail = adressEmail;
-	}
-	
-	
-	
-	
+	}	
 	
 }

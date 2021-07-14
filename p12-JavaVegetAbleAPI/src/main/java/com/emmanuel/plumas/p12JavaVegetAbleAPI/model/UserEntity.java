@@ -90,6 +90,4 @@ public class UserEntity implements Serializable{
 	public void setAdressEntity(AdressEntity adressEntity) {
 		this.adressEntity = adressEntity;
 	}
-	
-	
 }

@@ -64,7 +64,6 @@ public class RequestService {
 		requestRepository.save(requestEntity);
 	}
 	
-	
 	public List<RequestEntity> getRequestsByProvisionId(Long provisionId) {
 		return requestRepository.findByProvisionEntityProvisionId(provisionId);
 	}
@@ -73,9 +72,6 @@ public class RequestService {
 		RequestEntity requestEntity = requestRepository.findByRequestId(requestId);
 		requestEntity.setRequestStatus("Livrée");
 		requestRepository.save(requestEntity);
-
 	}
-
-	
 
 }

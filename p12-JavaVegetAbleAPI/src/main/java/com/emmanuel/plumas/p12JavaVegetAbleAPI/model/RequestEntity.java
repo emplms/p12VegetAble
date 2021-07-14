@@ -93,7 +93,4 @@ public class RequestEntity implements Serializable{
 	public void setProvisionEntity(ProvisionEntity provisionEntity) {
 		this.provisionEntity = provisionEntity;
 	}
-	
-	
-	
 }

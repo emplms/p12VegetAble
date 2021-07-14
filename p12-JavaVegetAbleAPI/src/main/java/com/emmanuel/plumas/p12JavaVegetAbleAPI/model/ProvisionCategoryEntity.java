@@ -43,8 +43,4 @@ public class ProvisionCategoryEntity implements Serializable{
 	public void setProvisionCategoryName(String provisionCategoryName) {
 		this.provisionCategoryName = provisionCategoryName;
 	}
-
-	
-	
-	
 }
