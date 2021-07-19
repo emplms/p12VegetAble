@@ -31,7 +31,7 @@ public class UserController {
 		return userEntity;
 	}
 	
-	@PostMapping(value="/user/update}")
+	@PostMapping(value="/user/update")
 	public void upDateUser(@RequestBody UserEntity userEntity) {
 		userEntity=userService.updateUser(userEntity);
 	}

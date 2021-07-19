@@ -17,6 +17,17 @@ public class UserService {
 	@Autowired
 	private ApiProxy apiProxy;
 	
+	
+	
+	
+	public ApiProxy getApiProxy() {
+		return apiProxy;
+	}
+
+	public void setApiProxy(ApiProxy apiProxy) {
+		this.apiProxy = apiProxy;
+	}
+
 	public List<UserEntity> getAllUsers(){
 		List<UserEntity> userEntities=apiProxy.getAllUsers();
 		return userEntities;
@@ -49,7 +60,7 @@ public class UserService {
 	}
 	
 	//Identifiant déjà existant
-	private boolean checkIdentifiantNotExist(UserEntity userEntity) {
+	public boolean checkIdentifiantNotExist(UserEntity userEntity) {
 		Boolean identifiantNotExist=true;
 		List<UserEntity> userEntities=apiProxy.getAllUsers();
 		for(UserEntity userEntityInBase :userEntities) {
@@ -61,7 +72,7 @@ public class UserService {
 	}
 	
 	//Identifiant vide
-	private boolean checkIdentifiantIsNotEmpty(UserEntity userEntity) {
+	public boolean checkIdentifiantIsNotEmpty(UserEntity userEntity) {
 		Boolean identifiantIsNotEmpty=false;
 		if(!userEntity.getUserIdentifiant().isEmpty()) {
 			identifiantIsNotEmpty=true;
@@ -70,7 +81,7 @@ public class UserService {
 	}
 	
 	//Mot de passe vide
-	private boolean checkPasswordIsNotEmpty(UserEntity userEntity) {
+	public boolean checkPasswordIsNotEmpty(UserEntity userEntity) {
 		Boolean passwordIsNotEmpty=false;
 		if(!userEntity.getUserPassword().isEmpty()) {
 			passwordIsNotEmpty=true;
