@@ -34,12 +34,12 @@ Pour les modifier, le chemin d'accès au fichier dans le projet est :
 
 ##### Lancement de l'API	
 1- Récupérer le fichier jar : dans le repository qui accueille le clone, saisir  la commande mvn install  
-2- Dans le dossier target, saisir la commande :    java -jar p12-JavaVegetAbleAPI-1.0.0-Snapshot.jar 
+2- Dans le dossier target, saisir la commande :    java -jar p12-JavaVegetAbleAPI-1.0.0.jar 
 l'API utilise le port 9001
 
 ##### Lancement de l'appliweb
 1- Récupérer le fichier jar : dans le repository qui accueille le clone, saisir  la commande mvn install  
-2- Dans le dossier target, saisir la commande :    java -jar  p12-JavaVegetAbleWEB-1.0.0-Snapshot.jar
+2- Dans le dossier target, saisir la commande :    java -jar  p12-JavaVegetAbleWEB-1.0.0.jar
 3- url de la page d'accueil :http://localhost:8080/
 
 
