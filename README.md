@@ -25,7 +25,7 @@ Pour cloner les composants du projet :
 # DEPLOIEMENT
 ##### BDD (postgresql)
 1- Télécharger PostgreSQL  
-2- Executer les scripts sql (dossier p12JavaVegetAble/p12-JavaVegetAbleAPI/src/main/ressources/doc)
+2- Executer les scripts sql (dossier p12JavaVegetAble)
 
 ##### paramètres de connection à la Base de Données
 Le user et le mot de passe de connection à la base de données par défaut sont renseignés dans le fichier application.properties  
